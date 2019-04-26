@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<SplitPane dividerPositions="0.5" xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.logdyn.EditorDockController"
+           prefHeight="400.0" prefWidth="600.0">
+    <TabPane>
+        <Tab text="test">
+            <AnchorPane>
+                <TextArea fx:id="test" prefHeight="200.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                          AnchorPane.topAnchor="0.0" wrapText="true">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the industry's standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </TextArea>
+            </AnchorPane>
+        </Tab>
+<!--        <Tab>-->
+<!--            <TextFlow prefHeight="200.0" prefWidth="314.0">-->
+<!--                <Text/>-->
+<!--            </TextFlow>-->
+<!--        </Tab>-->
+    </TabPane>
+<!--    <TabPane>-->
+<!--        <Tab>-->
+<!--            <TextFlow prefHeight="200.0" prefWidth="314.0">-->
+<!--                <Text/>-->
+<!--            </TextFlow>-->
+<!--        </Tab>-->
+<!--        <Tab>-->
+<!--            <TextFlow prefHeight="200.0" prefWidth="314.0">-->
+<!--                <Text/>-->
+<!--            </TextFlow>-->
+<!--        </Tab>-->
+<!--    </TabPane>-->
+</SplitPane>

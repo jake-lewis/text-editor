@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.io.IOException;
@@ -27,7 +26,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Scene scene = new Scene(loadFxml("primary", springContext));
+        final FXMLLoader loader = springContext.getBean(FXMLLoader.class);
+        loader.setLocation(App.class.getResource("fxml/root.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setTitle("JET-FX");
         stage.setScene(scene);
         stage.show();
     }
@@ -39,12 +42,6 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch(App.class, args);
-    }
-
-    public static Parent loadFxml(String fxmlName, ApplicationContext context) throws IOException {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource(fxmlName + ".fxml"));
-        loader.setControllerFactory(context::getBean);
-        return loader.load();
     }
 
 }

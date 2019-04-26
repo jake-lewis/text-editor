@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.logdyn.RootController">
+    <top>
+        <fx:include source="menuBar.fxml"/>
+    </top>
+    <center>
+        <fx:include source="editorDock.fxml"/>
+    </center>
+</BorderPane>
