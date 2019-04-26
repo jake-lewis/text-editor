@@ -16,4 +16,9 @@ public class AppConfig {
         loader.setControllerFactory(context::getBean);
         return loader;
     }
+
+    @Bean
+    public CommandDelegator commandDelegator() {
+        return CommandDelegator.getINSTANCE();
+    }
 }

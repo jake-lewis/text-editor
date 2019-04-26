@@ -9,4 +9,7 @@
     <center>
         <fx:include source="editorDock.fxml"/>
     </center>
+    <bottom>
+        <fx:include source="footer.fxml"/>
+    </bottom>
 </BorderPane>
