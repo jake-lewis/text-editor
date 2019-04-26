@@ -2,10 +2,12 @@ package com.logdyn;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.io.IOException;
@@ -25,9 +27,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
-        fxmlLoader.setControllerFactory(springContext::getBean);
-        stage.setScene(new Scene(fxmlLoader.load()));
+        Scene scene = new Scene(loadFxml("primary", springContext));
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -38,6 +39,12 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch(App.class, args);
+    }
+
+    public static Parent loadFxml(String fxmlName, ApplicationContext context) throws IOException {
+        FXMLLoader loader = new FXMLLoader(App.class.getResource(fxmlName + ".fxml"));
+        loader.setControllerFactory(context::getBean);
+        return loader.load();
     }
 
 }

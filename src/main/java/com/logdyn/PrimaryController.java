@@ -25,8 +25,6 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("secondary.fxml"));
-        fxmlLoader.setControllerFactory(context::getBean);
-        primaryButton.getScene().setRoot(fxmlLoader.load());
+        primaryButton.getScene().setRoot(App.loadFxml("secondary", context));
     }
 }
