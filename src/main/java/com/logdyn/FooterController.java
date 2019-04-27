@@ -12,10 +12,12 @@ public class FooterController implements PropertyChangeListener {
 
     @FXML
     private Label statusLabel;
+
     private CommandDelegator commandDelegator;
 
     public FooterController(CommandDelegator commandDelegator) {
         this.commandDelegator = commandDelegator;
+        this.commandDelegator.addListener(this);
     }
 
     @Override

@@ -6,13 +6,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class MenuBarController {
 
-    public MenuBarController() {
+    private final CommandDelegator commandDelegator;
 
+    public MenuBarController(CommandDelegator commandDelegator) {
+        this.commandDelegator = commandDelegator;
     }
 
     @FXML
-    public void newFile() {
+    public void newFile() throws ExecutionException {
         System.out.println("newFile");
+        commandDelegator.subscribe(command -> {
+            System.out.println("subscribed");
+        }, Command.class);
+        commandDelegator.publish(() -> "new File");
     }
 
     @FXML
