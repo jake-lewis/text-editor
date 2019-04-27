@@ -1,4 +1,4 @@
-package com.logdyn;
+package com.logdyn.ui;
 
 import org.springframework.stereotype.Component;
 

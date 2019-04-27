@@ -1,5 +1,6 @@
-package com.logdyn;
+package com.logdyn.ui;
 
+import com.logdyn.CommandDelegator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.springframework.stereotype.Component;

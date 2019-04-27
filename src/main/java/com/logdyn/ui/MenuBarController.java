@@ -1,5 +1,8 @@
-package com.logdyn;
+package com.logdyn.ui;
 
+import com.logdyn.CommandDelegator;
+import com.logdyn.ExecutionException;
+import com.logdyn.core.command.NewFileCommand;
 import javafx.fxml.FXML;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +17,7 @@ public class MenuBarController {
 
     @FXML
     public void newFile() throws ExecutionException {
-        System.out.println("newFile");
-        commandDelegator.subscribe(command -> {
-            System.out.println("subscribed");
-        }, Command.class);
-        commandDelegator.publish(() -> "new File");
+        commandDelegator.publish(new NewFileCommand());
     }
 
     @FXML

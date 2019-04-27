@@ -2,7 +2,7 @@
 
 <?import javafx.scene.layout.BorderPane?>
 <BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.logdyn.RootController">
+            fx:controller="com.logdyn.ui.RootController">
     <top>
         <fx:include source="menuBar.fxml"/>
     </top>
